@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+         
+           $("#two , #one").change(function(){
+                 var one = $("#one").val();
+                 var IntOne = parseInt(one);
+                 var two = $("#two").val();
+                 var Inttwo = parseInt(two);
+                 var sum = "";    
+                 sum = IntOne + Inttwo;
+                 $("#sum").val(sum);
+                 
+               //alert(sum);
+            
+            });
+
+			});
+
+  
+     
+
+	</script>
+</head>
+<body>
+	<input type="number" name="" id="one">
+	<input type="number" name="" id="two">
+	<input type="number"  name="" id="sum" disabled="">
+	<input type="text"  name="" id="search" placeholder=".......search........">
+
+</body>
+</html>
