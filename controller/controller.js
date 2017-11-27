@@ -5,7 +5,7 @@ app.controller('registerController', function ($scope, $http) {
         $scope.message = "";
             var request = $http({
                 method: "post",
-                url: "insert.php",
+                url: "php/insert.php",
                 data: {
                     username: $scope.username,
 					password: $scope.password
