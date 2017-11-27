@@ -1,4 +1,4 @@
-<html ng-app="myApp">
+<html>
 
 <head>
     <title>angular-library</title>
@@ -17,12 +17,21 @@
 </head>
 
 <body>
-    <form ng-controller="registerController" name="regForm" novalidate>
+    <div ng-app="myApp">  
+<form  ng-controller="registerController" name="regForm" novalidate>
         username:-<input type="text" ng-model="username"/>
         password:-<input type="text" ng-model="password"/>  
     <input type="submit" class="btn btn-sm btn-success" ng-click="submit_data()">
-</form>
+ </form>
 
+
+ <form  ng-controller="registerControllers" name="regForm" novalidate>
+        username:-<input type="text" ng-model="username"/>
+        password:-<input type="text" ng-model="password"/>  
+    <input type="submit" class="btn btn-sm btn-success" ng-click="submit_datas()">
+ </form>
+
+</div>  
 </body>
 
 </html>

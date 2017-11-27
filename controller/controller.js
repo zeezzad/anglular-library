@@ -18,3 +18,27 @@ app.controller('registerController', function ($scope, $http) {
     }
 });
 
+
+app.controller('registerControllers', function ($scope, $http) {
+    $scope.submit_datas = function () {
+        $scope.message = "";
+            var request = $http({
+                method: "post",
+                url: "php/insert.php",
+                data: {
+                    username: $scope.username,
+					password: $scope.password
+                },
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            });
+            request.success(function (data) {
+                $scope.message = "Console : "+ data;
+            });
+    }
+});
+
+
+
+
+
+
