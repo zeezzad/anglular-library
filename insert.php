@@ -1,10 +1,10 @@
 <?php
-//$postdata = json_decode(file_get_contents("php://input"));
-//$request  = json_decode($postdata);
-//$username = $postdata->username;
-//$password = $postdata->password;
-$username = $_REQUEST['username'];
-$password = $_REQUEST['password'];
+$postdata = json_decode(file_get_contents("php://input"));
+$request  = json_decode($postdata);
+@$username = $postdata->username;
+@$password = $postdata->password;
+//$username = $_REQUEST['username'];
+//$password = $_REQUEST['password'];
 
 $sername = "localhost";
 $user    = "root";

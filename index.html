@@ -1,4 +1,4 @@
-<html>
+<html ng-app="myApp">
 
 <head>
     <title>angular-library</title>
@@ -17,10 +17,10 @@
 </head>
 
 <body>
-    <form action="insert.php" method="post">
-        username:-<input type="text" ng-model="username" name="username"/>
-        password:-<input type="text" ng-model="password" name="password"/>  
-    <input type="Submit" value="Submit"/>
+    <form ng-controller="registerController" name="regForm" novalidate>
+        username:-<input type="text" ng-model="username"/>
+        password:-<input type="text" ng-model="password"/>  
+    <input type="submit" class="btn btn-sm btn-success" ng-click="submit_data()">
 </form>
 
 </body>
