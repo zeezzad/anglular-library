@@ -16,12 +16,14 @@
 
 </head>
 
-<body ng-app="myApp">
+<body ng-app="myApp" ng-controller="empcontroller">
       
-    <h2>Filter Demo1</h2>
-    <div ng-controller="myController">
-            {{message}}
-    </div>
+   <form action="">
+       <h2>Insert User</h2><br>
+       Username: <input type="text" ng-model="Username"/><br>
+       password: <input type="text" ng-model="password"/><br>
+       <button ng-click="postData()">Submit</button><br>
+   </form>
 
 
 </body>
