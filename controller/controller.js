@@ -1,24 +1,15 @@
-var myApp = angular.module('myApp', []);
+var app = angular.module('myApp', []);
 
-myApp.controller("empcontroller", function ($scope $http) {    
-       
-$scope.postData = function(){
+app.controller('bookController', function ($scope, $http) {
+    $scope.insertData = function () {
+        $http.post("insert.php", {
+            'username': $scope.username,
+            'password': $scope.username
+        })
 
-      var request = $http({
-       
-          method: "post",
-          url   :  window.location.href +"insert.php",
-          data :{
-             username: $scope.username,
-             password: $scope.password,
-
-          },
-
-          headers:{'Content-Type': 'application/x-www-form-urlencoded'}
-      });
-
+            .success(function (data, status, headers, config) {
+                console.log("Data Inserted Successfully");
+            });
     }
+});
 
-    });
-    
-        
