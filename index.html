@@ -6,7 +6,7 @@
         crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
         crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <script
     src="https://code.jquery.com/jquery-3.2.1.js"
     integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
@@ -30,6 +30,26 @@
         password:-<input type="text" ng-model="password"/>  
     <input type="submit" class="btn btn-sm btn-success" ng-click="submit_datas()">
  </form>
+
+
+        
+<table ng-controller="userCtrl">
+        
+         <tr>
+         <th>Username</th>
+         <th>Password</th>
+         
+         </tr>
+         
+         <!-- Display records -->
+         <tr ng-repeat="user in users">
+         <td>{{user.Uername}}</td>
+         <td>{{user.Password}}</td>
+         </tr>
+        
+         </table>
+         </div>
+
 
 </div>  
 </body>

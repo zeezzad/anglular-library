@@ -1,20 +1,22 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
 
-$conn = new mysqli("localhost", "root", "", "javawebmvc");
+$host = "root"; /* Host name */
+$user = ""; /* User */
+$password = ""; /* Password */
+$dbname = "javawebmvc"; /* Database name */
 
-$result = $conn->query("SELECT USERNAME, PASSWORD FROM user");
-
-$outp = "";
-while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
-    if ($outp != "") {$outp .= ",";}
-    $outp .= '{"Username":"'  . $rs["USERNAME"] . '",';
-    $outp .= '"password":"'   . $rs["PASSWORD"] . '",';
-    
+$con = mysqli_connect($host, $user, $password,$dbname);
+// Check connection
+if (!$con) {
+ die("Connection failed: " . mysqli_connect_error());
 }
-$outp ='{"records":['.$outp.']}';
-$conn->close();
 
-echo($outp);
+
+$sel = mysqli_query($con,"select * from user");
+$data = array();
+
+while ($row = mysqli_fetch_array($sel)) {
+ $data[] = array("Uername"=>$row['USERNAME'],"Password"=>$row['PASSWORD']);
+}
+echo json_encode($data);
 ?>
